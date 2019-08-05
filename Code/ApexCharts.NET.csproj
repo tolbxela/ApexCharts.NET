@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Tolbxela.ApexCharts</RootNamespace>
+    <Description>C# .Net Standard 2.0 wrapper for the ApexCharts Javascript Library - https://apexcharts.com</Description>
+    <Authors>Tolbxela</Authors>
+    <Company>Tolbxela</Company>
+    <Copyright>Tolbxela © 2019</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>ApexCharts.NET</PackageId>
+    <Product>ApexCharts.NET</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
