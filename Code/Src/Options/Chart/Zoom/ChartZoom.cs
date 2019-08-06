@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.ComponentModel;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace Tolbxela.ApexCharts
@@ -6,11 +7,13 @@ namespace Tolbxela.ApexCharts
     public class ChartZoom
     {
         [JsonProperty("enabled")]
-        public bool? Enabled { get; set; }
+        [DefaultValue(false)]
+        public bool? Enabled { get; set; } = false;
 
         [JsonProperty("type")]
         [JsonConverter(typeof(StringEnumConverter))]
-        public ZoomType? Type { get; set; } = ZoomType.x;
+        [DefaultValue(ZoomType.x)]
+        public ZoomType? Type { get; set; }
 
         [JsonProperty("autoScaleYaxis")]
         public bool? AutoScaleYaxis { get; set; }

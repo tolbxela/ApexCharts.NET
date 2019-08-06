@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -11,10 +11,13 @@ namespace Tolbxela.ApexCharts
         public bool? Show { get; set; }
 
         [JsonProperty("curve")]
-        public string Curve { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        [DefaultValue(StrokeCurve.straight)]
+        public StrokeCurve? Curve { get; set; }
 
         [JsonProperty("lineCap")]
-        public string LineCap { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public LineCap? LineCap { get; set; }
 
         [JsonProperty("colors")]
         public IList<object> Colors { get; set; }

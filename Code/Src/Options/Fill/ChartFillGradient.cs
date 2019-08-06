@@ -7,7 +7,8 @@ namespace Tolbxela.ApexCharts
     public class ChartFillGradient
     {
         [JsonProperty("shade")]
-        public string Shade { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ShadeType? Shade { get; set; }
 
         [JsonProperty("type")]
         [JsonConverter(typeof(StringEnumConverter))]

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -29,13 +30,15 @@ namespace Tolbxela.ApexCharts
         /// Sets the font family for all the text elements of the chart. Defaults to 'Helvetica, Arial, sans-serif'
         /// </summary>
         [JsonProperty("fontFamily")]
-        public string FontFamily { get; set; } = "Helvetica, Arial, sans-serif";
+        [DefaultValue("Helvetica, Arial, sans-serif")]
+        public string FontFamily { get; set; }
 
         /// <summary>
         /// Sets the text color for the chart. Defaults to #373d3f
         /// </summary>
         [JsonProperty("foreColor")]
-        public string ForeColor { get; set; } = "373d3f";
+        [DefaultValue("373d3f")]
+        public string ForeColor { get; set; }
 
         /// <summary>
         /// A small increment in height added to the parent of chart element.
@@ -76,7 +79,8 @@ namespace Tolbxela.ApexCharts
         /// </summary>
         [JsonProperty("type")]
         [JsonConverter(typeof(StringEnumConverter))]
-        public ChartType? Type { get; set; } = ChartType.line;
+        [DefaultValue(ChartType.line)]
+        public ChartType? Type { get; set; }
 
         [JsonProperty("zoom")]
         public ChartZoom Zoom { get; set; }

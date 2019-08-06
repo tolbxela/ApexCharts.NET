@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.ComponentModel;
+using Newtonsoft.Json;
 
 namespace Tolbxela.ApexCharts
 {
@@ -6,7 +7,8 @@ namespace Tolbxela.ApexCharts
     {
 
         [JsonProperty("enabled")]
-        public bool? Enabled { get; set; }
+        [DefaultValue(false)]
+        public bool? Enabled { get; set; } = false;
     }
 
 

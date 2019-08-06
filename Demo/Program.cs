@@ -150,7 +150,7 @@ namespace Demo
                     }
                 };
 
-                var apexchart = new ApexChart("apexchart", "#ApexChart", options);
+                var apexchart = new ApexChart("apexchart", "#ApexChart", options, formatJson: true);
 
                 Console.WriteLine($"Saving Chart to file '{FileName}'");
                 File.WriteAllText(FileName, apexchart.ToString());
@@ -166,8 +166,8 @@ namespace Demo
             proc.StartInfo.FileName = "index.html";
             proc.Start();
 
-            Console.WriteLine("Press any key...");
-            Console.ReadKey();
+            //Console.WriteLine("Press any key...");
+            //Console.ReadKey();
 
         }
     }

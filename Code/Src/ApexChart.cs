@@ -37,14 +37,14 @@ namespace Tolbxela.ApexCharts
             {
                 var jsonOptions = JsonConvert.SerializeObject(
                     Options, 
-                    Formatting.Indented, 
+                    (FormatJson) ? Formatting.Indented : Formatting.None, 
                     new JsonSerializerSettings
                         {
                             NullValueHandling = NullValueHandling.Ignore
-                        }
+                    }
                 );
 
-                jsonChart = $"var {ChartVarName} = new ApexCharts( document.querySelector(\"{HtmlSelector}\"), {jsonOptions} );" + 
+                jsonChart = $"var {ChartVarName} = new ApexCharts(document.querySelector(\"{HtmlSelector}\"), {jsonOptions});" + 
                     Environment.NewLine + 
                     $"{ChartVarName}.render();";
             }
